@@ -16,8 +16,7 @@ namespace TP_E_Commerce.Controllers
         UsuarioBL gestor = new UsuarioBL();
         public ActionResult Index()
         {
-            return View("PruebaLogin");
-            //return View("PLogin");
+            return View("Login");
         }
 
         // GET: Login/Details/5
