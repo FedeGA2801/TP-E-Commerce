@@ -63,6 +63,10 @@
     <Compile Include="Migrations\202105090226443_AddCart.designer.cs">
       <DependentUpon>202105090226443_AddCart.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107130241359_InitialCreate1.cs" />
+    <Compile Include="Migrations\202107130241359_InitialCreate1.designer.cs">
+      <DependentUpon>202107130241359_InitialCreate1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -82,6 +86,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105090226443_AddCart.resx">
       <DependentUpon>202105090226443_AddCart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107130241359_InitialCreate1.resx">
+      <DependentUpon>202107130241359_InitialCreate1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -18,6 +18,8 @@ namespace BE
 
         public int CategoryId { get; set; }
 
+        public string ProductImage { get; set; }
+
         public virtual Category Category { get; set; }
         public virtual ICollection<OrderedProduct> OrderedProducts { get; set; }
     }

@@ -39,6 +39,11 @@
         font-size: 16px;
         font-weight: 300;
     }
+
+    .img{
+        width: 100px;
+        height: 100px;
+    }
 </style>
 
 <h2>Products</h2>
@@ -57,6 +62,7 @@ else
     {
         <div class="card">
             <div style="padding: 2px 16px;">
+                <img src="@Url.Content(item.ProductImage)" class="img" />
                 <h4>@Html.DisplayFor(modelItem => item.Name)</h4>
                 <h5>$@Html.DisplayFor(modelItem => item.Price).</h5>
                 <p>@Html.DisplayFor(modelItem => item.Description)</p>
