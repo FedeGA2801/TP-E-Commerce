@@ -8,6 +8,7 @@ namespace BE
 {
     public class Product : IdentityBase
     {
+
         public string Name { get; set; }
 
         public double Price { get; set; }

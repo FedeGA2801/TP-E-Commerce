@@ -24,6 +24,7 @@ namespace TP_E_Commerce.Controllers
         }
 
         // GET: Product/Create
+        [HttpGet]
         public ActionResult Create()
         {
             return View();
