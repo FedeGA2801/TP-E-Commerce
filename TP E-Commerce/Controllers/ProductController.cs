@@ -12,9 +12,14 @@ namespace TP_E_Commerce.Controllers
         // GET: Product
         public ActionResult Index()
         {
-            ProductBL business = new ProductBL();
-            var products = business.GetProducts();
-            return View(products);
+            if (Session["UserSession"] == null)
+                return RedirectToAction("Index", "Login");
+            else
+            {
+                ProductBL business = new ProductBL();
+                var products = business.GetProducts();
+                return View(products);
+            }
         }
 
         // GET: Product/Details/5

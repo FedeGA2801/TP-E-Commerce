@@ -2,69 +2,53 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using BE;
-using BL;
-using System.Security.Claims;
-using TP_E_Commerce.Models;
 using System.Web.Mvc;
 
 namespace TP_E_Commerce.Controllers
 {
-    [AllowAnonymous]
-    public class LoginController : Controller
+    public class CartController : Controller
     {
-        // GET: Login
-        UsuarioBL gestor = new UsuarioBL();
+        // GET: Cart
         public ActionResult Index()
         {
-            if (Session["UserSession"] == null)
-                return View("Login");
-            else
-                return RedirectToAction("Home", "Index");
+            return View();
         }
 
-        // GET: Login/Details/5
+        // GET: Cart/Details/5
         public ActionResult Details(int id)
         {
             return View();
         }
 
-        // GET: Login/Create
+        // GET: Cart/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Login/Create
+        // POST: Cart/Create
         [HttpPost]
-        public JsonResult Login(Usuario u)
+        public ActionResult Create(FormCollection collection)
         {
             try
             {
                 // TODO: Add insert logic here
-                var usuario = gestor.ListarUsuarios().Where(user => user.Username == u.Username && user.Password == u.Password).FirstOrDefault();
-                if (usuario != null)
-                {
-                    Session["UserSession"] = usuario;
-                    return Json(new { Ok = true, redirectURL = Url.Action("Index", "Home") });
-                }
 
-                else
-                return Json(new { Ok = false, message= "Usuario o contraseña invalido" });
+                return RedirectToAction("Index");
             }
-            catch (Exception e)
+            catch
             {
-                return Json(new { Ok = false, message = "ERROR INESPERADO" });
+                return View();
             }
         }
 
-        // GET: Login/Edit/5
+        // GET: Cart/Edit/5
         public ActionResult Edit(int id)
         {
             return View();
         }
 
-        // POST: Login/Edit/5
+        // POST: Cart/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
@@ -80,13 +64,13 @@ namespace TP_E_Commerce.Controllers
             }
         }
 
-        // GET: Login/Delete/5
+        // GET: Cart/Delete/5
         public ActionResult Delete(int id)
         {
             return View();
         }
 
-        // POST: Login/Delete/5
+        // POST: Cart/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection)
         {
