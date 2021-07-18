@@ -40,7 +40,7 @@
 <body>
     @model TP_E_Commerce.Models.VIewModelLogin
     @{ Layout = null; }
-    @using (Html.BeginForm("Create", "Login"))
+    @using (Html.BeginForm("Login", "Login"))
     {
 @Html.AntiForgeryToken()
                 <div id="login">
@@ -82,7 +82,7 @@
         var errorUsername = document.getElementById("errorUsername");
         var errorPassword = document.getElementById("errorPassword");
         var ErrorGeneral = document.getElementById("ErrorGeneral");
-            var url = "@Url.Action("Create", "Login")";
+            var url = "@Url.Action("Login", "Login")";
         var Usuario = {
             Username: document.getElementById("username").value,
             Password: document.getElementById("password").value
