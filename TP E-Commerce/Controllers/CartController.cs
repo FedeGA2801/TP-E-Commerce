@@ -27,6 +27,31 @@ namespace TP_E_Commerce.Controllers
             return View();
         }
 
+
+        public ActionResult ActualizarPrecio()
+        {
+            BE.Cart carrito = Session["Carrito"] as BE.Cart;
+            return View(carrito);
+        }
+
+        public ActionResult EliminarDelCarrito(int id)
+        {
+            try
+            {
+                BL.ProductBL business = new BL.ProductBL();
+                var producto = business.GetProducts().Where(x => x.Id == id).FirstOrDefault();
+                BE.Cart carritoActual = Session["Carrito"] as BE.Cart;
+                var lista = carritoActual.ProductList;
+                int indice = lista.FindIndex(prod => prod.Product.Id == id);
+                lista.RemoveAt(indice);
+                return View("Index", carritoActual);
+            }
+            catch
+            {
+                return View("Index", Session["Carrito"] as BE.Cart);
+            }
+        }
+
         // POST: Cart/Create
         [HttpPost]
         public ActionResult Create(FormCollection collection)
@@ -42,6 +67,23 @@ namespace TP_E_Commerce.Controllers
                 return View();
             }
         }
+
+        [HttpPost]
+        public ActionResult Comprar(BE.Cart carrito)
+        {
+            try
+            {
+                // TODO: Add insert logic here
+
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+
 
         // GET: Cart/Edit/5
         public ActionResult Edit(int id)

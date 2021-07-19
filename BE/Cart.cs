@@ -10,6 +10,7 @@ namespace BE
     {
         public string CartId { get; set; }
         public DateTime DateCreated { get; set; }
+        public double TotalPrice { get; set; }
         public List<OrderedProduct> ProductList { get; set; }
         public virtual CustomerOrder CustomerData { get; set; }
 
