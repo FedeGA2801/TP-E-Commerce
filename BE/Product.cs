@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +21,10 @@ namespace BE
         public int CategoryId { get; set; }
 
         public string ProductImage { get; set; }
+
+        public int AvailableStock { get; set; }
+        [Range(0, int.MaxValue, ErrorMessage = "Por favor ingrese un valor valido")]
+        public int Amount { get; set; }
 
         public virtual Category Category { get; set; }
         public virtual ICollection<OrderedProduct> OrderedProducts { get; set; }

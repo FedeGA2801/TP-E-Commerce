@@ -14,7 +14,10 @@ namespace TP_E_Commerce.Controllers
             if (Session["UserSession"] == null)
                 return RedirectToAction("Index", "Login");
             else
+            {
                 return View();
+            }
+
         }
 
         public ActionResult About()

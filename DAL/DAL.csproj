@@ -71,6 +71,18 @@
     <Compile Include="Migrations\202107181944095_UserAdmin.designer.cs">
       <DependentUpon>202107181944095_UserAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107182113419_AgregoStock.cs" />
+    <Compile Include="Migrations\202107182113419_AgregoStock.designer.cs">
+      <DependentUpon>202107182113419_AgregoStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107182128013_ArregloModelos.cs" />
+    <Compile Include="Migrations\202107182128013_ArregloModelos.designer.cs">
+      <DependentUpon>202107182128013_ArregloModelos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107190035341_AgregoCantidadAProducto.cs" />
+    <Compile Include="Migrations\202107190035341_AgregoCantidadAProducto.designer.cs">
+      <DependentUpon>202107190035341_AgregoCantidadAProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -96,6 +108,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107181944095_UserAdmin.resx">
       <DependentUpon>202107181944095_UserAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107182113419_AgregoStock.resx">
+      <DependentUpon>202107182113419_AgregoStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107182128013_ArregloModelos.resx">
+      <DependentUpon>202107182128013_ArregloModelos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107190035341_AgregoCantidadAProducto.resx">
+      <DependentUpon>202107190035341_AgregoCantidadAProducto.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -11,7 +11,8 @@ namespace TP_E_Commerce.Controllers
         // GET: Cart
         public ActionResult Index()
         {
-            return View();
+            BE.Cart carrito = Session["Carrito"] as BE.Cart;
+            return View(carrito);
         }
 
         // GET: Cart/Details/5
