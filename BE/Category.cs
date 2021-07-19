@@ -13,5 +13,7 @@ namespace BE
         [MaxLength(20)]
         public string Name { get; set; }
         public virtual ICollection<Product> Products { get; set; }
+
+        public string ProductImage { get; set; }
     }
 }

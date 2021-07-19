@@ -2,6 +2,7 @@
 @{
     ViewBag.Title = "Products";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.carritoId = (Session["Carrito"] as BE.Cart).Id;
 }
 
 <link href="~/Content/Product.css" rel="stylesheet" />
@@ -28,7 +29,7 @@
                         <p>@Html.DisplayFor(modelItem => item.Description)</p>
                         <small class="text-muted">@item.LastUpdated.ToString("dd/MM/yyyy")</small>
                         <br />
-                        <button class="button buttonG">@Html.ActionLink("Agregar al Carrito", "AgregarAlCarrito", new { id = item.Id })</button>
+                        <button class="button buttonG">@Html.ActionLink("Agregar al Carrito", "AgregarAlCarrito", "Cart", new { idCart = ViewBag.carritoId, idProd = item.Id }, new { })</button>
                     </div>
                 </div>
             }

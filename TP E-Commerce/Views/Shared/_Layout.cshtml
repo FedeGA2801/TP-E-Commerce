@@ -39,7 +39,7 @@
                     var carrito = Session["Carrito"] as BE.Cart;
                     var cantidad = carrito.ProductList != null ? carrito.ProductList.Count() : 0;
                 }
-                <a>@Html.ActionLink("Carrito(" + @cantidad.ToString() + ")", "Index", "Cart")</a>
+                <a>@Html.ActionLink("Carrito(" + @cantidad.ToString() + ")", "Index", "Cart", new { idCart = carrito.Id }, new { })</a>
                 <a>@Html.ActionLink("Inicio", "Index", "Cart")</a>
             </div>
 

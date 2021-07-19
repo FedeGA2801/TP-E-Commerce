@@ -12,7 +12,17 @@ namespace BL
         public List<Product> GetProducts()
         {
             var db = new DAL.BaseDataService<Product>();
-            return db.Get();
+            List < Product > lista = db.Get();
+            db.CerrarDB();
+            return lista;
+        }
+
+        public BE.Product getProductInfo(int idProd)
+        {
+            var db = new DAL.BaseDataService<Product>();
+            Product prod = db.GetById(idProd);
+            db.CerrarDB();
+            return prod;
         }
     }
 }

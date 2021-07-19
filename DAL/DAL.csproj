@@ -87,6 +87,14 @@
     <Compile Include="Migrations\202107190233376_AgregoTotalCarrito.designer.cs">
       <DependentUpon>202107190233376_AgregoTotalCarrito.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107191929345_CorrijoOrdered.cs" />
+    <Compile Include="Migrations\202107191929345_CorrijoOrdered.designer.cs">
+      <DependentUpon>202107191929345_CorrijoOrdered.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107192019311_ImagenCategoria.cs" />
+    <Compile Include="Migrations\202107192019311_ImagenCategoria.designer.cs">
+      <DependentUpon>202107192019311_ImagenCategoria.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -124,6 +132,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107190233376_AgregoTotalCarrito.resx">
       <DependentUpon>202107190233376_AgregoTotalCarrito.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107191929345_CorrijoOrdered.resx">
+      <DependentUpon>202107191929345_CorrijoOrdered.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107192019311_ImagenCategoria.resx">
+      <DependentUpon>202107192019311_ImagenCategoria.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

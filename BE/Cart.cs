@@ -13,12 +13,5 @@ namespace BE
         public double TotalPrice { get; set; }
         public List<OrderedProduct> ProductList { get; set; }
         public virtual CustomerOrder CustomerData { get; set; }
-
-
-        public Cart()
-        {
-            ProductList = new List<OrderedProduct>();
-            CustomerData = new CustomerOrder();
-        }
     }
 }

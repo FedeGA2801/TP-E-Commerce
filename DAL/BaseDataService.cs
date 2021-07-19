@@ -26,6 +26,11 @@ namespace DAL
             return entity;
         }
 
+        public void CerrarDB()
+        {
+            this.Db.Dispose();
+        }
+
         public void Delete(T entity)
         {
             Db.Set<T>().Remove(entity);

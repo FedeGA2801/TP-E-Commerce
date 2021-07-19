@@ -36,33 +36,6 @@ namespace TP_E_Commerce.Controllers
         }
 
 
-        public ActionResult AgregarAlCarrito(int id)
-        {
-            try
-            {
-                ProductBL business = new ProductBL();
-                var producto = business.GetProducts().Where(x => x.Id == id).FirstOrDefault();
-                BE.Cart carritoActual = Session["Carrito"] as BE.Cart;
-                var lista = carritoActual.ProductList;
-                if(lista.Any(prod => prod.Product.Id == id))
-                {
-                    ViewBag.ErrorCarrito = "El producto ya se encuentra en el carrito";
-                    return RedirectToAction("Index");
-                }
-                else
-                {
-                    lista.Add(new BE.OrderedProduct(producto));
-                    ViewBag.ErrorCarrito = null;
-                    return RedirectToAction("Index");
-                }
-                
-            }
-            catch(Exception e)
-            {
-                return View();
-            }
-        }
-
         // GET: Product/Edit/5
         public ActionResult Edit(int id)
         {

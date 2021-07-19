@@ -12,10 +12,16 @@ namespace BE
 
         public virtual Product Product { get; set; }
 
+        public int CartID { get; set; }
+
         public OrderedProduct(BE.Product producto)
         {
             Quantity = 1;
             Product = producto;
+        }
+
+        public OrderedProduct()
+        {
         }
 
     }
