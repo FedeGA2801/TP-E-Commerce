@@ -46,6 +46,7 @@ namespace TP_E_Commerce.Controllers
                 if (usuario != null)
                 {
                     Session["UserSession"] = usuario;
+                    Session["Carrito"] = new BE.Cart();
                     return Json(new { Ok = true, redirectURL = Url.Action("Index", "Home") });
                 }
 

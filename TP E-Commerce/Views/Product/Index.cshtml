@@ -27,10 +27,16 @@
                         <h5>$@Html.DisplayFor(modelItem => item.Price).</h5>
                         <p>@Html.DisplayFor(modelItem => item.Description)</p>
                         <small class="text-muted">@item.LastUpdated.ToString("dd/MM/yyyy")</small>
+                        <br />
+                        <button class="button buttonG">@Html.ActionLink("Agregar al Carrito", "AgregarAlCarrito", new { id = item.Id })</button>
                     </div>
                 </div>
             }
         </div>
+        if(ViewBag.ErrorCarrito != null)
+                {
+                    <p>@ViewBag.ErrorCarrito</p>
+                }
     }
 </div>
 

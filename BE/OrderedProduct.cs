@@ -11,6 +11,12 @@ namespace BE
         public int Quantity { get; set; }
 
         public virtual Product Product { get; set; }
-        public virtual CustomerOrder CustomerOrder { get; set; }
+
+        public OrderedProduct(BE.Product producto)
+        {
+            Quantity = 1;
+            Product = producto;
+        }
+
     }
 }

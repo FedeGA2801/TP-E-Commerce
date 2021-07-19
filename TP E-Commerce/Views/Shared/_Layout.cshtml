@@ -35,8 +35,12 @@
                 <a href="@Url.Action("Index", "Home")" title="Home" class="links">
                     <img src="~/Content/Imagenes/kisspng-china-japan-temple-drawing-japan-japanese-tower-5a86c272800d43.3405034315187810425245.png" />
                 </a>
-                <a>@Html.ActionLink("Inicio", "Index", "Home")</a>
-                <a>@Html.ActionLink("Inicio", "Index", "Home")</a>
+                @{
+                    var carrito = Session["Carrito"] as BE.Cart;
+                    var cantidad = carrito.ProductList != null ? carrito.ProductList.Count() : 0;
+                }
+                <a>@Html.ActionLink("Carrito(" + @cantidad.ToString() + ")", "Index", "Cart")</a>
+                <a>@Html.ActionLink("Inicio", "Index", "Cart")</a>
             </div>
 
 

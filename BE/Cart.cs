@@ -9,9 +9,15 @@ namespace BE
     public class Cart : IdentityBase
     {
         public string CartId { get; set; }
-        public int ProductId { get; set; }
-        public int Count { get; set; }
         public DateTime DateCreated { get; set; }
-        public virtual Product Product { get; set; }
+        public List<OrderedProduct> ProductList { get; set; }
+        public virtual CustomerOrder CustomerData { get; set; }
+
+
+        public Cart()
+        {
+            ProductList = new List<OrderedProduct>();
+            CustomerData = new CustomerOrder();
+        }
     }
 }
